@@ -1,57 +1,83 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <section>
+        <form action="/signup" method="POST">
+          <p>Username</p>
+          <input list="names" name="username" type="text" maxlength="10">
+          <datalist id="names">
+            <option value="JohnDoe"></option>
+            <option value="JaneDoe"></option>
+            <option value="SeokdoMah"></option>
+          </datalist>
 
-    <!-- css,js files -->
-
-    <link href="./style.css" rel="stylesheet" type="text/css">
-    <style>
-      body {
-        background-color: #904200;
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
-
-  </head>
-  <body style="background-color: #009042;">
-    <header>
-      <div id="main-logo">
-        <h1>
-        <img src="tomato.jpg" width="128"/>
-        </h1><!-- 중요한 태그 h1-->
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="html_practice.html">Shop</a></li>
-          <li><a href="http://www.google.com/" target="_blank">My page</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main style="width:640px; margin: 0 auto;">
-    <section>
-      <h2>Headline</h2>
-      <article id:"article1">
-       <h1>국민대학교 교정에서 푸른 벚꽃 발견되어 충격</h1>
-       <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-       <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-       <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-      </article>
-      <article id:"article2">
-        <h1>국민대학교 교정에서 푸른 벚꽃 발견되어 충격</h1>
-        <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-        <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-        <p> 2024년 4월 국민대학교 경영관 앞에 푸른 벚꽃 나무가 발견되어 사람들의 이목을 집중시키고 있다.</p>
-        </article>
-        </section>
-
+          <label for="u-email">Email</label>
+          <input id="u-email" name="email" type="email">
+          <label for="u-pw">Password</label>
+          <input id="u-pw" name="password" type="password">
+          <label for="u-birth">Birthday</label>
+          <input id="u-birth" name="birthday" type="date">
+          <input type="submit">
+          <button type="reset">초기화</button>
+        </form>
+      </section>
+      <style>
+        .div-squre {
+          width: 100px;
+          height: 100px;
+        }
+        .sq-pd {
+          /* padding: 10px; */
+          /* padding: 10px 20px; */
+          /* padding: 10px 20px 30px; */
+          padding: 10px 20px 30px 40px;
+          paddiing-top: 30px;
+        }
+        .sq-mg {
+          margin: 30px 20px;
+        }
+        .div-center {
+          margin: 0px auto;
+          width: 25%;
+        }
+      </style>
       <section>
-        <h2>많이 물어본 질문</h2>
-        <details>
-          <summary>건조기를 사용해도 괜찮나요?</summary>
-          <p>해당 의류는 고온의 조건에서 변형이 일어날 수 있습니다.</p>
+       <div class="div-squre" style="background-color: skyblue;">1</div>
+       <div class="div-squre sq-pd" style="background-color: salmon;">2</div> 
+       <div class="div-squre sq-mg" style="background-color: gray;">3</div> 
+       <div class="div-squre div-center" style="background-color: lightgray;">4</div> 
+      </section>
+      <style>
+       .flex-container {
+       display: flex;
+       width:295px;
+       height: 120px;
+         /*
+       flex-direction: row;
+       flex-wrap: nowrap;
+      */
+      flex-flow: colum nowrap;
+       }
+       .flex-box {width: 100px; height:100px; text-align:center;}
+       .bg-red {background-color: red;}
+       .bg-blue {background-color: blue;}
+       .bg-gray {background-color: gray;}
+      </style>
+      <section class="flex-container">
+       <article class="flex-box bg-red">1</article>
+       <article class="flex-box bg-blue">2</article>
+       <article class="flex-box bg-gray">3</article>
+      </section>
+    </main>
+
+    <aisde>
+      <h3>가장 많이 본 뉴스</h3>
+      <ul>
+        <!---id: 요소에 이름달기(unique) class: 스타일속성 활용을 위한 이름 -->
+        <li><a href="#article1">행운의 편지, 효과가...</a></li>
+        <li><a href="#article2">이번 여름 예상 최고기온이 헉!</a></li>
+        <li><a href="#">만우절 최고의 뉴스 - 만우절 폐지</a></li>
+        </ul>
+    </aisde>
+    <footer>
+      <h3>This is footer.</h3>
+    </footer>
+  </body>
+</html>
