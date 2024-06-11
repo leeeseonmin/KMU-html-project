@@ -1,26 +1,163 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- css,js files -->
-
-    <link href="./style.css" rel="stylesheet" type="text/css">
+    <title>상품 상세 페이지</title>
     <style>
-      body {
-        background-color: #904200;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-images {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-images .main-image {
+            display: block;
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .product-images .thumbnail-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .product-images .thumbnail-images img {
+            max-width: 100px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .product-details {
+            flex: 1 1 100%;
+        }
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .product-price {
+            font-size: 20px;
+            color: #b12704;
+            margin-bottom: 10px;
+        }
+        .shipping-info {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .shipping-info p {
+            margin-bottom: 10px;
+        }
+        .product-description {
+            margin-bottom: 20px;
+        }
+        .product-options {
+            margin-bottom: 20px;
+        }
+        .product-options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .product-options select, .product-options input {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .product-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .buy-now, .add-to-cart {
+            padding: 15px;
+            border: 2px solid #000000; /* 외곽선 추가 */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* 장바구니 버튼의 기본 링크 스타일 제거 */
+            display: inline-block; /* 인라인 요소로 변경하여 외곽선이 버튼에 꼭 맞도록 함 */
+            transition: background-color 0.3s, color 0.3s; /* 배경색 및 글자색 변경 시 부드러운 전환 효과 */
+        }
+        .buy-now {
+            background-color: #1C1C1C;
+            color: white;
+        }
+        .buy-now:hover {
+            background-color: #005bb5;
+        }
+        .add-to-cart {
+            background-color: #FFFFFF; /* 흰색 */
+            color: #000000; /* 검정색 */
+        }
+        .add-to-cart:hover {
+            background-color: #FFFFFF; /* 흰색 */
+            color: #000000; /* 검정색 */
+        }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="product-images">
+                <img src="모자1.png" alt="대표 상품 이미지" class="main-image">
+                <div class="thumbnail-images">
+                    <img src="모자1.png" alt="상품 이미지 1" onclick="showImage('모자1.png')">
+                    <img src="모자2.png" alt="상품 이미지 2" onclick="showImage('모자2.png')">
+                    <img src="모자3.png" alt="상품 이미지 3" onclick="showImage('모자3.png')">
+                    <img src="모자4.png" alt="상품 이미지 4" onclick="showImage('모자4.png')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">WEEKAND CAP</h1>
+                <p class="product-price">₩39,000</p>
+                <div class="shipping-info">
+                    <p>배송비</p>
+                    <p>3,000원 (100,000원 이상 구매 시 무료)<br>제주 및 도서 산간 2,000원 추가</p>
+                </div>
+                <div class="product-description">
+                    <p>고밀도 16수의 면으로 재작된 원단을 사용하여 워싱 가공으로 빈티지함이 돋보이는 제품입니다.<br>
+                    남녀모두 편하게 착용할 수 있는 제품이며 후면 스트랩으로 사이즈 조절이 가능합니다.<br>
+                    컬러는 레드, 브라운, 블루 총 3가지 컬러로 선보입니다.</p>
+                </div>
+                <div class="product-options">
+                    <label for="color">COLOR</label>
+                    <select id="color" name="color">
+                        <option value="red">RED</option>
+                        <option value="brown">BROWN</option>
+                        <option value="blue">BLUE</option>
+                    </select>
+                    <label for="quantity">수량</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+                <div class="product-buttons">
+                    <button class="buy-now">구매하기</button>
+                    <button class="add-to-cart">장바구니에 담기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </head>
-  <body style="background-color: #009042;">
-    <header>
-      <div id="main-logo">
-        <h1>
-        <img src="tomato.jpg" width="128"/>
-        
+    <script>
+        function showImage(imageUrl) {
+            const mainImage = document.querySelector('.main-image');
+            mainImage.src = imageUrl;
+        }
+    </script>
+</body>
+</html>
