@@ -13,24 +13,44 @@
             color: #343a40;
         }
         .navbar {
-            background-color: #333;
+            background-color: transparent;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 로고를 페이지 왼쪽으로 이동 */
+            padding-left: 20px;
         }
-        .navbar a {
-            float: left;
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* 로고를 왼쪽으로 이동 */
+            padding: 10px 0;
+        }
+        .navbar .nav-links {
+            display: flex;
+            justify-content: flex-start; /* 네비게이션 버튼을 왼쪽으로 이동 */
+            width: 100%;
+        }
+        .navbar .nav-links a {
             display: block;
-            color: white;
+            color: black; /* 글자 색상 검정색으로 변경 */
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
+            background-color: transparent; /* 배경 투명 */
+            transition: color 0.3s; /* 마우스 호버시 색상 전환에 트랜지션 적용 */
         }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        .navbar .nav-links a:hover {
+            color: #adff2f; /* 마우스 호버 시 연두색으로 변경 */
+        }
+        .navbar img {
+            width: 150px; /* 로고 이미지 크기 조정 */
+            height: 150px; /* 로고 이미지 크기 조정 */
+            margin: 5px 20px 5px 10px;
         }
         header, footer {
-            background-color: #343a40;
-            color: #ffffff;
+            background-color: transparent; /* 푸터 배경 투명 */
+            color: #000000; /* 글자색 검은색 */
             text-align: center;
             padding: 1em 0;
         }
@@ -98,11 +118,17 @@
     </style>
 </head>
 <body>
+    <!-- 네비게이션 및 로고 영역 -->
     <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="#product">PRODUCT</a>
-        <a href="qna.html">Q&A</a>
-        <a href="#contact">CONTACT</a>
+        <div class="logo">
+            <img src="logo.png" alt="로고 이미지">
+        </div> <!-- 로고 추가 -->
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="index.html">PRODUCT</a>
+            <a href="qna.html">Q&A</a>
+            <a href="#contact">CONTACT</a>
+        </div>
     </div>
     <header>
         <h1>Q&A 페이지</h1>
@@ -199,9 +225,10 @@
             <button class="post-question" onclick="postQuestion()">POST QUESTION</button>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Q&A 페이지</p>
+    <footer style="font-size: 12px; color: #000000;"> <!-- 푸터 배경 투명 -->
+        <p>&copy; 상호: 해피띵즈 | 대표: 이선민 | 개인정보관리책임자: 이선민 | 이메일: sunmin7601@gmail.com</p>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var questions = document.querySelectorAll('.question');
@@ -218,12 +245,4 @@
 
         function searchQuestions() {
             var query = document.getElementById('searchQuery').value;
-            alert('검색 기능은 구현되지 않았습니다. 검색어: ' + query);
-        }
-
-        function postQuestion() {
-            alert('질문 등록 기능은 구현되지 않았습니다.');
-        }
-    </script>
-</body>
-</html>
+            alert('

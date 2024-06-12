@@ -12,20 +12,40 @@
             box-sizing: border-box;
         }
         .navbar {
-            background-color: #333;
+            background-color: transparent;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 로고를 페이지 왼쪽으로 이동 */
+            padding-left: 20px;
         }
-        .navbar a {
-            float: left;
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* 로고를 왼쪽으로 이동 */
+            padding: 10px 0;
+        }
+        .navbar .nav-links {
+            display: flex;
+            justify-content: flex-start; /* 네비게이션 버튼을 왼쪽으로 이동 */
+            width: 100%;
+        }
+        .navbar .nav-links a {
             display: block;
-            color: white;
+            color: black; /* 글자 색상 검정색으로 변경 */
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
+            background-color: transparent; /* 배경 투명 */
         }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        .navbar .nav-links a:hover {
+            background-color: transparent; /* 배경 투명 유지 */
+            color: #adff2f; /* 글자 색상을 연두색으로 변경 */
+        }
+        .navbar img {
+            width: 150px; /* 로고 크기 조정 */
+            height: 150px; /* 로고 크기 조정 */
+            margin: 5px 20px 5px 10px;
         }
         .container {
             max-width: 1200px;
@@ -154,7 +174,7 @@
         .additional-images {
             display: flex;
             flex-direction: column;
-            align-items: center;
+           	align-items: center;
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -163,9 +183,18 @@
             height: 600px;
             object-fit: cover;
         }
+        .return-policy {
+            text-align: center;
+            margin: 40px auto;
+            width: 600px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
         footer {
-            background-color: #343a40;
-            color: #ffffff;
+            background-color: transparent; /* 푸터 배경 투명 */
+            color: #000000; /* 글자색 검은색 */
             text-align: center;
             padding: 1em 0;
             margin-top: 20px; /* 위쪽에 약간의 간격 추가 */
@@ -174,10 +203,15 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="#product">PRODUCT</a>
-        <a href="qna.html">Q&A</a>
-        <a href="#contact">CONTACT</a>
+        <div class="logo">
+            <img src="logo.png" alt="로고 이미지">
+        </div>
+        <div class="nav-links">
+            <a href="#home"">HOME</a>
+            <a href="index.html">PRODUCT</a>
+            <a href="qna.html">Q&A</a>
+            <a href="#contact">CONTACT</a>
+        </div>
     </div>
     <div class="container">
         <div class="product">
@@ -204,7 +238,7 @@
                 </div>
                 <div class="product-options">
                     <label for="color">COLOR</label>
-                    <select id="color" name="color">
+                    <select id="color" name="color" onchange="updateImages(this.value)">
                         <option value="red">RED</option>
                         <option value="brown">BROWN</option>
                         <option value="blue">BLUE</option>
@@ -245,14 +279,44 @@
             <img src="모자3.png" alt="추가 이미지 3">
             <img src="모자4.png" alt="추가 이미지 4">
         </div>
+        <div style="margin-top: 20px;">
+        <div class="return-policy" style="white-space: nowrap; text-align: left;">
+            - 단순 변심의 경우 수령일로부터 7일 이내까지 교환/반품이 가능합니다. (교환/반품비 고객님 부담)<br>
+            - 상품 하자, 오배송의 경우 수령일로부터 7일 이내 고객센터 접수 후 교환/반품이 가능합니다. (교환/반품비 무료)<br>
+            - 제품 특성상 단순 변심, 부주의에 의한 제품 손상 및 파손, 사용 및 개봉한 경우 교환/반품이 불가합니다.<br>
+            - 동일 상품 / 동일 옵션 교환만 가능합니다.
+        </div>
+
     </div>
-    <footer>
-        <p>&copy; 2024 Q&A 페이지</p>
+        <footer style="font-size: 12px;">
+        <p>&copy; 상호: 해피띵즈 | 대표: 이선민 | 개인정보관리책임자: 이선민 | 이메일: sunmin7601@gmail.com</p>
     </footer>
     <script>
         function showImage(imageUrl) {
             const mainImage = document.querySelector('.main-image');
             mainImage.src = imageUrl;
+        }
+
+        function updateImages(color) {
+            const mainImage = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            const additionalImages = document.querySelectorAll('.additional-images img');
+            const colorMap = {
+                'red': '모자1.png',
+                'brown': '브라운모자1.jpg',
+                'blue': '블루모자1.jpg'
+            };
+
+            mainImage.src = colorMap[color];
+
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.src = colorMap[color].replace('1', index + 1);
+                thumbnail.setAttribute('onclick', `showImage('${thumbnail.src}')`);
+            });
+
+            additionalImages.forEach((img, index) => {
+                img.src = colorMap[color].replace('1', index + 1);
+            });
         }
     </script>
 </body>
