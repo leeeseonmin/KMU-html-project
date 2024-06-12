@@ -42,15 +42,15 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: center; /* 중앙 정렬 */
+            align-items: center;
         }
         .product-images .main-image {
             display: block;
             margin-bottom: 10px;
-            width: 600px; /* 너비를 600px로 고정 */
-            height: 600px; /* 높이를 600px로 고정 */
+            width: 600px;
+            height: 600px;
             border-radius: 4px;
-            object-fit: cover; /* 이미지가 고정된 크기에 맞게 조정 */
+            object-fit: cover;
         }
         .product-images .thumbnail-images {
             display: flex;
@@ -58,11 +58,11 @@
             gap: 10px;
         }
         .product-images .thumbnail-images img {
-            width: 150px; /* 너비를 150px로 고정 */
-            height: 150px; /* 높이를 150px로 고정 */
+            width: 150px;
+            height: 150px;
             border-radius: 4px;
             cursor: pointer;
-            object-fit: cover; /* 이미지가 고정된 크기에 맞게 조정 */
+            object-fit: cover;
         }
         .product-details {
             flex: 1 1 100%;
@@ -102,16 +102,17 @@
         .product-buttons {
             display: flex;
             gap: 10px;
+            margin-bottom: 20px;
         }
         .buy-now, .add-to-cart {
             padding: 15px;
-            border: 2px solid #000000; /* 외곽선 추가 */
+            border: 2px solid #000000;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            text-decoration: none; /* 장바구니 버튼의 기본 링크 스타일 제거 */
-            display: inline-block; /* 인라인 요소로 변경하여 외곽선이 버튼에 꼭 맞도록 함 */
-            transition: background-color 0.3s, color 0.3s; /* 배경색 및 글자색 변경 시 부드러운 전환 효과 */
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
         }
         .buy-now {
             background-color: #1C1C1C;
@@ -121,12 +122,46 @@
             background-color: #005bb5;
         }
         .add-to-cart {
-            background-color: #FFFFFF; /* 흰색 */
-            color: #000000; /* 검정색 */
+            background-color: #FFFFFF;
+            color: #000000;
         }
         .add-to-cart:hover {
-            background-color: #FFFFFF; /* 흰색 */
-            color: #000000; /* 검정색 */
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        table {
+            width: 600px;
+            margin: 40px auto; /* 상단과 하단에 마진 추가 */
+            background-color: #ffffff;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: none;
+        }
+        th {
+            background-color: #ffffff;
+            border-bottom: 1px solid #000; /* 1행 아래에 테두리를 추가 */
+        }
+        .washing-instruction {
+            text-align: center;
+            margin: 80px auto 40px; /* 표와 문구 사이 간격을 더 넓힘 */
+            width: 600px;
+            font-size: 14px;
+            color: #555;
+        }
+        .additional-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .additional-images img {
+            width: 600px;
+            height: 600px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -175,6 +210,33 @@
                     <button class="add-to-cart">장바구니에 담기</button>
                 </div>
             </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SIZE</th>
+                    <th>둘레</th>
+                    <th>길이</th>
+                    <th>챙길이</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>F size</td>
+                    <td>58cm</td>
+                    <td>17cm</td>
+                    <td>7.4cm</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="washing-instruction">
+            *세탁 시 변형이 올 수 있으므로 일반 세제를 사용해 찬물로 '단독' 손세탁을 권장합니다.
+        </div>
+        <div class="additional-images">
+            <img src="모자1.png" alt="추가 이미지 1">
+            <img src="모자2.png" alt="추가 이미지 2">
+            <img src="모자3.png" alt="추가 이미지 3">
+            <img src="모자4.png" alt="추가 이미지 4">
         </div>
     </div>
 
