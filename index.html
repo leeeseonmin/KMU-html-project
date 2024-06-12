@@ -163,6 +163,13 @@
             height: 600px;
             object-fit: cover;
         }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px; /* 위쪽에 약간의 간격 추가 */
+        }
     </style>
 </head>
 <body>
@@ -239,7 +246,9 @@
             <img src="모자4.png" alt="추가 이미지 4">
         </div>
     </div>
-
+    <footer>
+        <p>&copy; 2024 Q&A 페이지</p>
+    </footer>
     <script>
         function showImage(imageUrl) {
             const mainImage = document.querySelector('.main-image');
