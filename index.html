@@ -96,6 +96,14 @@
             color: #b12704;
             margin-bottom: 10px;
         }
+        .discounted-price {
+            color: #00aaff; /* 연한 파란색 */
+        }
+        .original-price {
+            text-decoration: line-through;
+            margin-right: 10px;
+            color: #555;
+        }
         .shipping-info {
             margin-bottom: 20px;
             color: #555;
@@ -174,7 +182,7 @@
         .additional-images {
             display: flex;
             flex-direction: column;
-           	align-items: center;
+            align-items: center;
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -207,7 +215,7 @@
             <img src="logo.png" alt="로고 이미지">
         </div>
         <div class="nav-links">
-            <a href="#home"">HOME</a>
+            <a href="#home">HOME</a>
             <a href="index.html">PRODUCT</a>
             <a href="qna.html">Q&A</a>
             <a href="#contact">CONTACT</a>
@@ -226,7 +234,7 @@
             </div>
             <div class="product-details">
                 <h1 class="product-title">WEEKAND CAP</h1>
-                <p class="product-price">₩39,000</p>
+                <p class="product-price"><span class="discounted-price">34,000원</span> <span class="original-price">39,000원</span></p>
                 <div class="shipping-info">
                     <p>배송비</p>
                     <p>3,000원 (100,000원 이상 구매 시 무료)<br>제주 및 도서 산간 2,000원 추가</p>
@@ -247,7 +255,7 @@
                     <input type="number" id="quantity" name="quantity" min="1" value="1">
                 </div>
                 <div class="product-buttons">
-                    <button class="buy-now">구매하기</button>
+                    <button class="buy-now">바로 구매하기</button>
                     <button class="add-to-cart">장바구니에 담기</button>
                 </div>
             </div>
