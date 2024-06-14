@@ -6,7 +6,7 @@ KMU-html-project 이선민_U2023072
 상단 좌측 로고 제작 후 삽입<br>
 하단에 네비게이션 버튼 HOME, PRODUCT, Q&A, CONTACT 생성<br>
 Q&A 버튼 클릭 시 qna.html로 링크 연결<br>
-PRODUCT 버튼 클릭 시 index.html로 링크 연결<br>
+로고이미지와 PRODUCT 버튼 클릭 시 index.html로 링크 연결<br>
 버튼에 마우스 호버 시 글자 색상 연두색으로 보임<br>
 상품 이미지는 대표 상품이미지와 하단에 상품 이미지 4개 배치 -> 하단 상품 이미지 클릭 시 대표 상품이미지에 보여지도록 설정<br>
 COLOR와 수량 선택 버튼<br>
@@ -17,6 +17,6 @@ SIZE 보여주는 테이블 생성<br>
 푸터 설정<br>
 
 2. qna.html 페이지<br>
-PRODUCT 버튼 클릭 시 index.html로 링크 연결<br>
+로고이미지와 PRODUCT 버튼 클릭 시 index.html로 링크 연결<br>
 Q&A 보이는 테이블 생성<br>
 테이블 하단에 페이지 매김 번호 생성 -> 현재 페이지인 1은 다홍색으로 표시 -> 1 클릭 시 페이지 내 "첫번째 페이지입니다!" 팝업창 띄움
